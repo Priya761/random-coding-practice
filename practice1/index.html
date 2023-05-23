@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click Me!</button>
+    <p></p>
+
+    <script>
+        let btn = document.querySelector("button");
+        let prevString = '';
+
+        btn.addEventListener("click", () => {
+            let text = document.querySelector("p");
+            const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+            
+            const letters = alphabets.split('');
+            // console.log(letters);
+            let index = Math.round(Math.random() * (alphabets.length - 1));
+            prevString += letters[index];
+            console.log(prevString);
+
+            text.innerHTML = prevString;
+        })
+    </script>
+</body>
+</html>
